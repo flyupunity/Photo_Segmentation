@@ -1,0 +1,7 @@
+path: C:\Users\1\Desktop\ярослав\Python\Repository-Photo_Segmentation\cat
+train: cat
+val: cat
+
+#Classes
+names:
+    0: cat

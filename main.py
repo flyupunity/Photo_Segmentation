@@ -1,17 +1,13 @@
 from ultralytics import YOLO
-import cv2
 
-# load yolov8 model
-model = YOLO('yolov8.pt')
-
-# load video
-video_path = './test.jpg'
-cap = cv2.VideoCapture(video_path)
+# train new model
+model = YOLO('yolov8m.yaml')
+results = model.train(data='config.yaml', epochs=5)
 
 ret = True
 # read frames
 while ret:
-    ret, frame = cap.read()
+    #ret, frame = cap.read()
 
     # detect objects
     # track objects
