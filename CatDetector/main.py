@@ -5,7 +5,7 @@ model = YOLO('best.pt')                                     # Load the YOLOv8 mo
 
 print("0)Train new model")
 print("1)Test with web-camera")
-print("2)Test with image")
+print("2)Test with image/folder")
 print("3)Test with video")
 mode = input()
 
@@ -18,7 +18,8 @@ elif mode == "1":
     media_path = 0                                          # Open the video file
     cap = cv2.VideoCapture(media_path)
 elif mode == "2":
-    media_path = "test.jpg"#"test.jpg"
+    print("Please enter global or local image/folder path")
+    media_path = input()#"train/images"#"test.jpg"#"test.jpg"
     results = model.track(source=media_path, show=True)
 elif mode == "3":
     media_path = "test.mp4"                                 # Open the video file
@@ -40,7 +41,7 @@ while success:                                              # Loop through the v
         results = model.track(frame, persist=True)          # Run YOLOv8 tracking on the frame, persisting tracks between frames
     
     annotated_frame = results[0].plot()                     # Visualize the results on the frame
-    cv2.imshow("YOLOv8 Tracking", annotated_frame)          # Display the annotated frame
+    #cv2.imshow("YOLOv8 Tracking", annotated_frame)          # Display the annotated frame
 
     if cv2.waitKey(1) & 0xFF == ord("q"):                   # Break the loop if 'q' is pressed
         break
