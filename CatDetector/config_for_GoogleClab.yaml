@@ -1,7 +1,0 @@
-path: /content/Photo_Segmentation/CatDetector
-train: train
-val: valid
-
-#Classes
-names:
-    0: cat
