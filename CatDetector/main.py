@@ -1,7 +1,7 @@
 import cv2
 from ultralytics import YOLO
 
-model = YOLO('best.pt')                                    # Load the YOLOv8 model
+model = YOLO('best.pt')                                     # Load the YOLOv8 model
 
 print("0)Train new model")
 print("1)Test with web-camera")
@@ -18,7 +18,7 @@ elif mode == "1":
     media_path = 0                                          # Open the video file
     cap = cv2.VideoCapture(media_path)
 elif mode == "2":
-    media_path = "001.jpg"#"test.jpg"
+    media_path = "test.jpg"#"test.jpg"
     results = model.track(source=media_path, show=True)
 elif mode == "3":
     media_path = "test.mp4"                                 # Open the video file
