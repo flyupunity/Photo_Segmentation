@@ -11,7 +11,7 @@ mode = input()
 
 if mode == "0":
     model = YOLO('yolov8n.yaml')                            # load new model
-    results = model.train(data='config.yaml', epochs=5)     # train model
+    results = model.train(data='config.yaml', epochs=150)     # train model
     model.export(format='onnx')                             # save model in 'onnx' format
     
 elif mode == "1":
